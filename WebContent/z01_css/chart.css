@@ -17,14 +17,18 @@
   margin: 8px;
   height: 32px;
   font-size: 10pt;
+  transition:0.5s;
 }
+
 .genre-icons:focus {
   background: orange;
   color:white;
+  flex: 1.5 1 0;
 }
 .genre-icons:hover {
   border: 1px solid orange;
-  color: orange;
+  color: gray;
+  flex: 1.5 1 0;
 }
 .chart-title {
   margin-bottom: 20px;
@@ -57,22 +61,27 @@ td {
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
-.tableAlbum {
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+.a{
+	padding:-8px 0px;
 }
+
 .tableheaderchild:nth-child(3) {
   display: flex;
   width: 100%;
+}
+.title_image{
+	width: 60px;
+	height:60px;
+	border-radius:15px;
+	background-repeat: no-repeat;
+  	background-position: center;
+  	background-size: 100%;
 }
 .title_album {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-left:10px;
 }
 .chart-more {
   background: white;
@@ -146,14 +155,10 @@ tfoot tr td {
   right: 0;
   top: 0;
   bottom: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.modal {
-  display: none;
 }
 
 .dialog {
@@ -179,7 +184,7 @@ tfoot tr td {
   color: orange;
 }
 .more-content {
-  display: block;
+  display: none;
   position: absolute;
   background-color: white;
   min-width: 200px;

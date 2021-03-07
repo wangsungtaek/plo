@@ -22,12 +22,13 @@
 //
    $(document).ready(function(){
 	   var cnt = 1;
-      $("#mylist-modal").on("click",function(){
-    	 $(".modal").css("display", "flex");
-      });
+      
       $("#mylist-cancel").on("click",function(){
     	  $(".modal").css("display", "none");
       })
+      $("#mylist-modal").on("click",function(){
+    	 $(".modal").css("display", "flex");
+      });
       $("#mylist-more").on("click",function(){
      	 if(cnt == 1){
      		 $(".more-content").css("display", "block");
@@ -91,14 +92,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <div class="songinfo">
+                                     <div class="songinfo">
                                         <tr>
-                                            <td width="2%">
+                                            <td width="2%" class="tableheaderchild">
                                                 <input type="checkbox"/>
                                             </td>
                                             <td width="7%" class="tableheaderchild">1</td>
                                             <td width="51%" class="tableheaderchild">
-                                                <figure class="tableAlbum" style="background-image: url(ilbuni.png);"></figure>
+                                                <div class="title_image" style="background-image: url(ilbuni.png);"></div>
                                                 <div class="title_album">
                                                     <span>Celebrity</span>
                                                     <span>Celebrity</span>
@@ -107,18 +108,26 @@
                                             <td width="16%" class="tableheaderchild">아이유(IU)</td>
                                             <td width="6%">
                                                 <button type="button">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                                                         <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                                     </svg>
                                                 </button>
                                             </td>
                                             <td width="6%">
                                                 <button type="button">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
                                                         <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
                                                         <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
                                                         <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
                                                         <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                                                    </svg>
+                                                </button>
+                                            </td>
+                                            <td width="6%">
+                                                <button type="checkbox" id="mylist-modal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+                                                        <path d="M.5 3l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+                                                        <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
                                                     </svg>
                                                 </button>
                                                 <div class="more-content">
@@ -166,16 +175,8 @@
                                                 </div>
                                             </td>
                                             <td width="6%">
-                                                <button type="button" id="mylist-modal">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
-                                                        <path d="M.5 3l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
-                                                        <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                            <td width="6%">
                                                 <button type="button" id="mylist-more">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                                                         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                                                     </svg>
                                                 </button>

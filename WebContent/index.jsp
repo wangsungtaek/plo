@@ -10,8 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" 
-   href="${path}/z01_css/default.css">
+<link rel="stylesheet" href="${path}/z01_css/default.css">
 <style>
 
 </style>

@@ -40,6 +40,9 @@
       });
    });
 </script>
+<style type="text/css">
+
+</style>
 </head>
 <body>
 	  <div class="container-fluid" style="background: white;">

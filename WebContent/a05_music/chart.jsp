@@ -21,15 +21,16 @@
 --%>
 //
    $(document).ready(function(){
-	   var cnt = 1;
-      
+	   var cnt = 1; 
       $("#mylist-cancel").on("click",function(){
     	  $(".modal").css("display", "none");
       })
       $("#mylist-modal").on("click",function(){
     	 $(".modal").css("display", "flex");
       });
+      
       $("#mylist-more").on("click",function(){
+
      	 if(cnt == 1){
      		 $(".more-content").css("display", "block");
      		 cnt++;
@@ -38,6 +39,33 @@
      		cnt = 1;
      	 }
       });
+      // 듣기버튼 클릭시 하단 팝업
+      $("[name=playbutton]").on("click",function(){
+    	  $(".no-login-play-box").css("display","none");
+    	  $(".xlogin-playboxadd-text").css("display","flex");
+    	  $(".xlogin-playboxadd-text2").css("display","flex");
+    	  $(".no-login-play-box").css("display","flex");
+    	  setTimeout(function(){
+    		  $(".xlogin-playboxadd-text").css("display","none");
+		  }, 500);
+      });
+      // 재생목록 클릭시 하단 팝업
+      $("[name=playlistbutton]").on("click",function(){
+    	  $(".xlogin-playboxadd-text").css("display","flex");
+    	  $(".xlogin-playboxadd-text2").css("display","none");
+    	  $(".no-login-play-box").css("display","flex");
+    	  setTimeout(function(){
+    		  $(".xlogin-playboxadd-text").css("display","none");
+    		  $(".no-login-play-box").css("display","none");
+		  }, 500);
+      });
+      //음원 체크박스
+      $(".music-check-box").css("display","none");
+      // 리스트담기 팝업
+      $(".mylistInput").css("display","none");
+      // 재생시 하단 팝업
+      $(".no-login-play-box").css("display","none");
+      
    });
 </script>
 <style type="text/css">
@@ -46,8 +74,13 @@
 </head>
 <body>
 	  <div class="container-fluid" style="background: white;">
-        <div class="row" style="height: 100px;">header</div>
+        <div class="row" style="height: 100px;">
+        <jsp:include page="../a01_main/header.jsp"></jsp:include>
+        </div>
         <div class="row" >
+        <jsp:include page="music-check.jsp"></jsp:include>
+        <jsp:include page="mylist-popup.jsp"></jsp:include>
+        <jsp:include page="no-login-play.jsp"></jsp:include>
             <div class="col-1"></div>
             <!-- 둘러보기 메인 -->
             <div class="col" id="tour">
@@ -110,14 +143,14 @@
                                             </td>
                                             <td width="16%" class="tableheaderchild">아이유(IU)</td>
                                             <td width="6%">
-                                                <button type="button">
+                                                <button type="button" name="playbutton">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                                                         <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                                                     </svg>
                                                 </button>
                                             </td>
                                             <td width="6%">
-                                                <button type="button">
+                                                <button type="button" name="playlistbutton">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
                                                         <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
                                                         <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
@@ -241,12 +274,15 @@
                 </div>
                 <!--기업소개-->
                 <div class="row">
-                    <div class="col"></div>
+                    <div class="col">
+                    <%@include file="../a01_main/footer.jsp" %>
+                    </div>
                 </div>
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="row">footer</div>
+        <div class="row">footer
+        </div>
         <div class="modal">
             <div class="dialog">
                 <div clss="dialog-text">

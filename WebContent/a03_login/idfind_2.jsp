@@ -48,14 +48,14 @@ span{
 </head>
 <body>
 	<div class="signin_content">	
-	<%@ include file="header.jsp" %>		
+	<%@ include file="../a01_main/header.jsp" %>		
 		<div id="box">
 			<div id="title">아이디 찾기</div>
 				<div id="result">해당 이메일로 가입된 아이디는 <br> @@@ 입니다.</div>
 				<button id="goLoginBtn"><span>로그인</span></button>
 				<button id="goPwfindBtn"><span>비밀번호 찾기 </span></button>
 		</div>
-	<%@ include file="footer.jsp" %>	
+	<%@ include file="../a01_main/footer.jsp" %>	
 	</div>
 </body>
 </html>

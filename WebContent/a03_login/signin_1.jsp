@@ -54,7 +54,7 @@ button:focus{
 </head>
 <body>
 	<div class="signin_content">
-		<%@ include file="header.jsp" %>
+		<%@ include file="../a01_main/header.jsp" %>
 		<img class="logo" src="../z00_imgs/logo.png"/>
 		
 		<div id="box">
@@ -100,7 +100,7 @@ button:focus{
 	   		
 	   		
 		</div>
-		<%@ include file="footer.jsp" %>
+		<%@ include file="../a01_main/footer.jsp" %>
    </div>
 
    

@@ -45,7 +45,7 @@
 </head>
 <body>
 	<div class="signin_content">
-		<%@ include file="header.jsp" %>		
+		<%@ include file="../a01_main/header.jsp" %>		
 		<div id="box">
 			<div id="title">비밀번호 찾기</div>
 			<form method="post"> 
@@ -57,7 +57,7 @@
 				</table>
 			</form>		
 		</div>
-		<%@ include file="footer.jsp" %>
+		<%@ include file="../a01_main/footer.jsp" %>
 	</div>
 </body>
 </html>

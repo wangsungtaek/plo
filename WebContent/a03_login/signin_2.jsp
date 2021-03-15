@@ -120,7 +120,7 @@
 </head>
 <body>
 	<div class="signin_content">
-		<%@ include file="header.jsp" %>
+		<%@ include file="../a01_main/header.jsp" %>
 		<div id="box">
 			<img class="logo" src="../z00_imgs/logo.png"/>
 			
@@ -136,7 +136,7 @@
 			</form>				
 			<button id="doneBtn"><span style="font-weight:bold; color:#fff; font-size:15px;">가입 완료</span></button>
 		</div>
-		<%@ include file="footer.jsp" %>
+		<%@ include file="../a01_main/footer.jsp" %>
 	</div>
 
 </body>

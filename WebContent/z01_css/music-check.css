@@ -4,7 +4,7 @@
         width:340px;
         left: 39%;
         top: 65%;
-        z-index: 0;
+        z-index: 999;
         height: 105px;
         border-radius: 5px;
         background-color: orange;

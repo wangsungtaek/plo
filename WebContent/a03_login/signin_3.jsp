@@ -51,7 +51,7 @@
 </head>
 <body>
 	<div class="signin_content">
-		<%@ include file="header.jsp" %>
+		<%@ include file="../a01_main/header.jsp" %>
 		<div id="box">
 			<img class="logo" src="../z00_imgs/logo.png"/>
 			<br>
@@ -62,7 +62,7 @@
 				<button id="mainBtn"><span style="font-weight:bold; color:#fff; font-size:15px;">메인화면</span></button>
 			</div>
 		</div>
-		<%@ include file="footer.jsp" %>
+		<%@ include file="../a01_main/footer.jsp" %>
 	</div>
 </body>
 </html>

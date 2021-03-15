@@ -3,7 +3,7 @@
     position: fixed;
     width:100%;
     bottom: 0.1em;
-    z-index: 0;
+    z-index: 999;
     height: 75px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -20,10 +20,11 @@
 }
 .xlogin-playboxadd-text{
     height: 100%;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 11pt;
+    z-index: 1;
 }
 .xlogin-playboxs-close{
     text-align: right;

@@ -57,7 +57,7 @@
 </head>
 <body>
 	<div class="signin_content">
-		<%@ include file="header.jsp" %>
+		<%@ include file="../a01_main/header.jsp" %>
 		<div id="box">
 			<form method="post"> 
 				<table id="loginTable" >	
@@ -74,7 +74,7 @@
 				<a href="signin_1.jsp" id="joinBtn">회원가입</a>
 			</div>		
 		</div>
-		<%@ include file="footer.jsp" %>
+		<%@ include file="../a01_main/footer.jsp" %>
 	</div>
 
 

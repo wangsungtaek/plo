@@ -432,7 +432,7 @@
     </div>
 	     
 	   </div>
-	   <%@ include file="footer.jsp" %>
+	   <%@ include file="../a01_main/footer.jsp" %>
 	</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.js" 

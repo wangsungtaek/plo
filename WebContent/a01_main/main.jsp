@@ -11,452 +11,170 @@
 <head>
 <meta charset="UTF-8">
 <title>Plo</title>
+<script src="${path}/z02_js/jquery-3.5.1.js"></script>
 <link rel="stylesheet" href="../z01_css/default.css">
 <style>
-  /*전체 페이지*/
- .wrapper{
-     width:1080px;
-     height:100px;    
-     background-color:white; 
-     margin:0 auto;
+  /*전체 페이지
+   여백 제거*/
+   body{
+    margin:0px;
+    padding:0px;
+    }
+   
+   /*전체 감싸는 것*/
+   .wrapper{
+    width:100%;   
+    }
+   
+   /*콘텐츠*/
+   div.container{
+    min-width: 955px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding:50px 0px 110px 0px;
+    }
+   
+   /*혈액형*/
+   .section_a{
+    width:100%;
+    padding:50px 0px 30px 0px;
+    }
+   
+   /*혈액형 글씨*/
+   .section_a_text{
+    font-size:15px;
+    font-weight:bold;
+    }
+   /*최신 음악*/
+   .section_b{
+	padding:50px 0px 30px 0px;
+    }
+  
+    .section_c{
+    padding:50px 0px 30px 0px;
+    }
+     
+    .section_d{
+    padding:50px 0px 30px 0px;
+    }
+    
+    .section_e{
+     padding:50px 0px 30px 0px;
      }
      
+     .section_f{
+     padding:50px 0px 30px 0px;
+     }
      
-    /*앨범 메뉴*/
-    .section_content_wrap{
-    position:relative;
-    padding:70px 0 0 0;
-    }
-    
-    /*앨범 메뉴*/
-    .section_content_head{
-    position:relative;
-    z-index:20;
-    min-height:20px;
-    font-weight:bold;
-    }
-    
-    /*제목*/
-   .section_title{
-    color:#333;
-    font-weight:bold;
-   }
-    
-    
-   .swiper_horizon {
-    min-height: 189px;
-    margin-top: 6px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
-    }    
-    
-   .swiper-wrapper{
-    position:relative;
-    width:100%;
-    height:100%;
-    z-index:1;
-    display:flex;
-    transition-property:transform, -webkit-transform;
-    box-sizing:content-box;
-   }
- 
-   .swiper-slide{
-   flex-shrink:0;
-   width:100%;
-   height:100%;
-   position:relative;
-   transition-property: transform,-webkit-transform;
-   }
-   .thmbnail_list{
-   margin-left:-16px;
-   }
+     .section_g{
+     padding:50px 0px 30px 0px;
+     }
+     
+  	.section_box {
+  	width: 955px;
+  	padding-left: 80px;
+  	padding-right: 80px;
+  	margin: 0 auto;
+  	}
    
-   .thumbnail_list li{
-   display:inline-block;
-   vertical-align:top;
-   overflow:hidden;
-   width:175px;
-   margin-left:20px;   
-   }
- 
-   div{
-   margin:0;
-   padding:0;
-   border:0;
-   }
- 
-  .album_thumnail{
-    position: relative;
-    height: 175px;
-    width: 175px;
-    margin-bottom: 15px;
-    padding-top: 14px;
-    line-height: 175px;
-    text-align: center;
-    background: transparent;
-  }
- 
-   .album_thumnail .link_thumbnail{
-    z-index: 3;
-    position: relative;
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: white;
-   }
-   
-   .btn_thumbnail_play{
-   z-index: 3;
-   postition:absolute;
-   right:9px;
-   bottom:12px;
-   color: transparent;
-   text-indent:100%;
-   vertical-align:middle;
-   white-space:nowrap;
-   overflow:hidden;
-   background-image:url;
-   background-position:-569px -310px;
-   width:32px;
-   height:32px; 
-   }
-   
-   .thumbnail_list li .album_title_text{
-   display:block;
-   margin:0 3px;
-   font-size:15px;
-   white-space: normal;   
-   }
-   
-   .thumbnail_list li .artist_title_text{
-   display:block;
-   margin:5px 3px 0;
-   color: #969696;
-   font-size:13px;
-   white-space:normal;   
-   }
-   
-
 </style>
-<script type="text/javascript">
-</script>
-</head>
-
 <body>
-<div class=wrapper>
-
-<!-- 추천 음악 배너 -->
-<section class="section_content_wrap">
- <div class="section_content_head">
-  <h3>
-   <a href="#" class="section_title">
-  혈액형에 딱 맞는 노래들, 들어볼래?
-   </a>
-  </h3>
- </div>
- <div class="swiper-wrapper">
-  <ul class="thumbnail_list">
-   <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img22.PNG" width="175" height="175">        
-        </a>
-        
-       </div>
-      </div>
-    </li>
+ <div class="wrapper">
+  <div class="container">
+  <div class="section_box">
+  <div class="section_a">
+   <div class="section_a_text">
+   혈액형에 딱 맞는 노래들, 들어볼래?
+  
+   </div>
+    <br>
+   <a href="#">
+   <img src="../z00_imgs/main_Img22.PNG" width="200px" height="200px"></a>
+    <a href="#">
+   <img src="../z00_imgs/main_Img23.PNG" width="200px" height="200px"></a>
+    <a href="#">
+   <img src="../z00_imgs/main_Img24.PNG" width="200px" height="200px"></a>
+    <a href="#">
+   <img src="../z00_imgs/main_Img25.PNG" width="200px" height="200px"></a>
+  </div>
+  
+  <div class="section_b">
+   <div class="section_a_text">
+    최신 발매 음악
+   </div>
+   <br>
+  <a href="../a11_musicDetail/musicDetail.jsp">
+  <img src="../z00_imgs/main_Img01.PNG"  width="200px" height="200px"></a>
+  <a href="#">
+  <img src="../z00_imgs/main_Img02.PNG"  width="200px" height="200px"></a>
+  <a href="#">
+  <img src="../z00_imgs/main_Img03.PNG"  width="200px" height="200px"></a>
+  <a href="#">
+  <img src="../z00_imgs/main_Img04.PNG"  width="200px" height="200px"></a>
+  </div>
+  
+  <div class="section_c">
+  <a href="#">
+  <img src="../z00_imgs/main_Img05.PNG"  width="200px" height="200px"></a>
+   <a href="#"> 
+  <img src="../z00_imgs/main_Img06.PNG"  width="200px" height="200px"></a>
+   <a href="#">
+  <img src="../z00_imgs/main_Img07.PNG"  width="200px" height="200px"></a>
+   <a href="#">
+  <img src="../z00_imgs/main_Img08.PNG"  width="200px" height="200px"></a>
+   </div>
+  
+   <div class="section_d">
+   <a href="#">
+   <img src="../z00_imgs/main_Img09.PNG"  width="200px" height="200px"></a>
+   <a href="#">
+   <img src="../z00_imgs/main_Img10.PNG"  width="200px" height="200px"></a>
+   </div>
    
+   <div class="section_e">
+   <div class="section_a_text">
+    장르 콜렉션
+   </div>
+   <br>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img11.PNG" width="175px" height="75px"></a>
+    <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img12.PNG" width="175px" height="75px"></a>
+    <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img12.PNG" width="175px" height="75px"></a>
+    <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img13.PNG" width="175px" height="75px"></a>
+    <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img14.PNG" width="175px" height="75px"></a>  
+   </div>
    
-      <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img23.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/logo.png" width="90" height="40">          
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img24.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img25.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-
-</section>
-
-<section class="section_content_wrap">
- <div class="section_content_head">
-  <h3>
-   <a href="#" class="section_title">
-   최신 발매 앨범
-   </a>
-  </h3>
- </div>
- <div class="swiper-wrapper">
-  <ul class="thumbnail_list">
-   <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img01.PNG" width="175" height="175">        
-        </a>
-        
-       </div>
-      </div>
-    </li>
+   <div class="section_f">
+   <br>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img15.PNG" width="175px" height="75px"></a>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img16.PNG" width="175px" height="75px"></a>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img17.PNG" width="175px" height="75px"></a>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img18.PNG" width="175px" height="75px"></a>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img19.PNG" width="175px" height="75px"></a>
+   </div>
    
-   
-      <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img02.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img03.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img04.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img05.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img06.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img07.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img08.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img09.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img10.PNG" width="175" height="175">        
-        </a>
-       </div>
-      </div>
-    </li> 
-  </ul>
- </div>
-</section>
+   <div class="section_g">
+   <br>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img20.PNG" width="175px" height="75px"></a>
+   <a href="..a05_music/genre.jsp">
+   <img src="../z00_imgs/main_Img21.PNG" width="175px" height="75px"></a> 
+  </div>
+  
+  <%@include file="footer.jsp" %>
 
-<!-- 장르 콜렉션 -->
-
-<section class="section_content_wrap">
- <div class="section_content_head">
-  <h3>
-   <span>장르 콜렉션</span>
-  </h3>
- </div>
- <div class="swiper-wrapper">
-  <ul class="thumbnail_list">
-   <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img11.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-   
-   
-      <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img12.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img13.PNG" width="175" height=75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img14.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img15.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img16.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img17.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img18.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img19.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-    </li>
-    
-     <li class>
-     <div class="thumbnail_item area">
-      <div class="album_thumnail">
-        <a href="#" class="link_thumbnail">
-        <img src="../z00_imgs/main_Img20.PNG" width="175" height="75">        
-        </a>
-       </div>
-      </div>
-          
-    </li> 
-     
-     <li class>
-        <a href="#">
-        <img src="../z00_imgs/main_Img21.PNG" width="175" height="75">        
-        </a>
-       </li>     
-       </div>
-      </div>
-      </div> 
-      </div>    
-  </ul>
- 
-</section>
-</div>
-
+  </div>
+  <%@include file="../a09_playList/musicplayer.jsp" %>
+ </div><!-- container -->
+ </div><!-- wrapper -->
 </body>
-<%@ include file="footer.jsp"%>
 </html>

@@ -1,3 +1,5 @@
+//const leavePop = $('.popup_container').detach();
+
 // 현재 비밀번호 확인 관련 :first
 $('#currentPassword').on('input', function() {
 	if($(this).val().length>5) {
@@ -80,7 +82,9 @@ $('.sort_type_wrap button').on('click', function(){
 $('.btn_close_popup').on('click', function(){
 	$('.popup_container').hide();
 });
-$('input[type=checkbox]').on('click', function(){
+//$('input[type=checkbox]').on('click', function(){
+//$('.section_inner').on('click', 'input[type=checkbox]', function(){
+$('input[type=checkbox]').on('click', function(){	
 	if($('#checkbox1').is(':checked') && $('#checkbox2').is(':checked')) {
 		$('.btn_leave').attr('disabled', false);
 	} else {

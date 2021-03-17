@@ -107,3 +107,52 @@ UPDATE P_MUSIC
        m_lyrics,
        alb_no
  WHERE m_no = ?;
+
+-- 페이지별 공지사항 리스트
+SELECT * FROM (
+	SELECT ROWNUM num, n.* FROM (
+		SELECT * FROM P_NOTICE ORDER BY n_no DESC
+	) n
+) WHERE num BETWEEN 1 AND 4;
+
+-- 공지사항 상세
+SELECT * FROM P_NOTICE WHERE n_no = 1; 
+
+-- 공지사항 등록
+INSERT INTO P_NOTICE
+VALUES(P_NOTICE_NO_SEQ.NEXTVAL, 'test', 'test..',
+to_date('2001-11-15', 'yyyy-mm-dd'), 1);
+
+
+-- 공지사항 업데이트
+UPDATE P_NOTICE
+   SET n_title = ?,
+       n_content = ?,
+       n_date = to_date(?, 'yyyy-mm-dd'),
+       n_pub = ?
+ WHERE n_no = ?;
+
+-- FAQ 검색, 조회
+SELECT * FROM (
+	SELECT ROWNUM num, faq.* FROM (
+			SELECT f.*, code.fc_name
+			  FROM P_FAQ f, P_FAQ_CODE code
+			 WHERE f.fc_no = code.fc_no
+			   AND f_title LIKE UPPER('%%')
+			   AND fc_name LIKE UPPER('%%')
+		  ORDER BY f_no DESC
+		) faq
+) WHERE num BETWEEN 1 AND 5;
+
+-- FAQ 업데이트
+UPDATE P_FAQ
+   SET f_title = ?,
+       f_content = ?,
+       f_pub = ?,
+       fc_no = ?
+ WHERE f_no = ?
+  
+SELECT * FROM P_FAQ_CODE;
+
+-- 장르조회
+SELECT * FROM P_FAQ_CODE;

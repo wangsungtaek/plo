@@ -4,8 +4,9 @@
 	padding-bottom: 111px;
 }
 #wrap {
-    width: 1080px;
+    width: 100%;
     min-width: 955px;
+    max-width: 1600px;
     height: 100%;
     margin: 0 auto;
 }
@@ -117,7 +118,7 @@
 }
 .badge_track_info .title {
     display: block;
-    overflow: hidden;
+/*  overflow: hidden; */
     text-overflow: ellipsis;
     white-space: nowrap;
     font-weight: 700;
@@ -126,7 +127,7 @@
 }
 .badge_track_info .artist {
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-top: 14px;
@@ -134,7 +135,7 @@
 }
 .badge_track_info .album {
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-top: 14px;
@@ -197,7 +198,7 @@
 	padding-left: 15px;
 }
 .music_detail_info .info_txt {
-    overflow: hidden;
+  /*  overflow: hidden;*/
 }
 .music_detail_info .info_txt dl {
     margin-top: -20px;

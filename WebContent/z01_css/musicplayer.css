@@ -2,6 +2,34 @@
 
 
 /* 재생 목록 */
+.playlist_ct p,
+.player_ct p {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.playlist_ct,
+.player_ct,
+.playlist_ct div,
+.player_ct div,
+.playlist_ct ul,
+.player_ct ul{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style:none;
+}
+.playlist_ct ::after,
+.player_ct ::after {
+	box-sizing: content-box;
+}
+
 .playlist_ct {
     z-index: 200;
     position: fixed;
@@ -33,7 +61,7 @@
     font-weight: bold;
 }
 /* 재생목록 헤더 */
-.playlist_header_util {
+.playlist_ct .playlist_header_util {
     position: relative;
     z-index: 20;
     padding: 43px 15px 19px 14px;
@@ -123,7 +151,8 @@
     font-weight: 700;
     line-height: 60px;
 }
-.playlist_ct .group_area.now .list_title span, .playlist_ct .group_area.pause .list_title span {
+.playlist_ct .group_area.now .list_title span, 
+.playlist_ct .group_area.pause .list_title span {
     color: #3f3fff;
 }
 /* 재생목록 - 리스트트랙 */
@@ -267,6 +296,12 @@
     width: 30px;
     height: 30px;
 }
+.playlist_ct .playlist_util .btn_delete {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -180px -628px;
+    width: 25px;
+    height: 25px;
+}
 /* 이 플레이리스트만 듣기 */
 .playlist_ct .btn_list_listen {
     background-image: url(../z00_imgs/button_img.png);
@@ -325,6 +360,12 @@
     position: absolute;
     top: 53px;
     right: 40px;
+}
+/* 재생목록 편집 */
+.playlist_item.track_area .chk_area {
+    float: left;
+    padding-top: 27px;
+    padding-left: 20px;
 }
 
 /* 뮤직 플레이어 */
@@ -390,7 +431,7 @@
     padding-top: 12px;
     font-size: 18px;
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #fff;
@@ -731,4 +772,30 @@ input[type=range]:focus {
     background-position: -36px -557px;
     width: 31px;
     height: 31px;
+}
+
+/* 플레이어 위 메시지 */
+.snack_bar {
+    position: fixed;
+    right: 0;
+    bottom: 111px;
+    left: 0;
+    z-index: 400;
+    height: 74px;
+    background-color: rgba(24,24,24,.95);
+}
+.snack_bar .txt_area {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    position: relative;
+    width: 801px;
+}
+.snack_bar p.txt1 {
+    line-height: 27px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
 }

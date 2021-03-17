@@ -63,17 +63,12 @@
 											</button>
 										</div>	
 										<div class="playlist_util">
-											<button type="button" class="btn_add_mylist">보관함에 추가하기</button>
-											<button type="buttton" class="btn_playlist_more">더보기</button>
 										</div>
 									</div> <%-- track_area --%>
 								</span>
 							</div>
 						</div>
-						<div class="playlist_util">
-								<button type="button" class="btn_list_listen">이 플레이리스트만 듣기</button>
-								<button type="button" class="btn_list_close">플레이리스트 열기</button>
-						</div>
+						<div class="playlist_util"></div>
 					</div><%-- group_area --%>
 					<div id="PITEM_SINGLE" class="playlist_item track_area">
 						<div data-no="1" class="track_item">
@@ -89,8 +84,6 @@
 							</button>
 						</div>	
 						<div class="playlist_util">
-							<button type="button" class="btn_add_mylist">보관함에 추가하기</button>
-							<button type="buttton" class="btn_playlist_more">더보기</button>
 						</div>
 					</div>
 					<div id="PITEM_SINGLE" class="playlist_item track_area">
@@ -107,8 +100,6 @@
 							</button>
 						</div>	
 						<div class="playlist_util">
-							<button type="button" class="btn_add_mylist">보관함에 추가하기</button>
-							<button type="buttton" class="btn_playlist_more">더보기</button>
 						</div>
 					</div>
 					<div id="PITEM_SINGLE" class="playlist_item group_area"> 
@@ -132,16 +123,12 @@
 											</button>
 										</div>	
 										<div class="playlist_util">
-											<button type="button" class="btn_add_mylist">보관함에 추가하기</button>
-											<button type="buttton" class="btn_playlist_more">더보기</button>
 										</div>
 									</div>
 								</span>
 							</div>
 						</div>
 						<div class="playlist_util">
-								<button type="button" class="btn_list_listen">이 플레이리스트만 듣기</button>
-								<button type="button" class="btn_list_close">플레이리스트 열기</button>
 						</div>
 					</div>
 				</span>
@@ -197,6 +184,21 @@
 			</div>
 		</section>
 	</div>
+	<%-- 스낵바
+	<div class="snack_bar" style="z-index: 499;">
+	
+	</div>
+	
+	 --%>
+	 <script>
+	 	var isLogin = true;
+	 	var path="${path}";
+	 	var audioList = [{m_no:1, m_name:"Fly away(inst)", art_name:"권진아"}, 
+			{m_no:2, m_name:"내 손을 잡아(inst)", art_name:"아이유(IU)"},
+			{m_no:3, m_name:"그땐 그땐 그땐(inst)", art_name:"슈프림팀"}];
+	 	var pl = {"0":audioList};
+	 	localStorage.setItem('PLO_PL', JSON.stringify(pl));
+	 </script>
 	<script src="${path}/z02_js/musicplayer.js"></script>
  </body>
 </html>

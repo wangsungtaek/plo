@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
- button {
+button {
 	outline: none;
     background-color: transparent;
     cursor: pointer;
@@ -12,8 +12,9 @@
 }
 
 #wrap {
-    width: 1080px;
+    width: 100%;
     min-width: 955px;
+    max-width: 1600px;
     height: 100%;
     margin: 0 auto;
 }

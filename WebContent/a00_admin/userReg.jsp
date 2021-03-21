@@ -44,9 +44,8 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-			id="accordionSidebar">
+		<ul class="navbar-nav sidebar sidebar-dark accordion"
+			id="accordionSidebar" style="background: #ff8533;">
 
 			<!-- Sidebar - Brand -->
 			<a
@@ -188,7 +187,7 @@
 					<!-- card -->
 					<div class="card shadow mb-4 w-25">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">회원 등록</h6>
+							<h6 class="m-0 font-weight-bold" style="color :#ff8533;">회원 등록</h6>
 						</div>
 
 						<!-- card-item -->
@@ -230,7 +229,7 @@
 						</div>
 						<!-- End of card-item -->
 												
-						<button type="button" class="regBtn btn btn-primary m-3">등 록</button>
+						<button type="button" class="regBtn btn m-3" style="background: #ff8533; color: white;">등 록</button>
 						
 					</div>
 					<!-- End of card -->

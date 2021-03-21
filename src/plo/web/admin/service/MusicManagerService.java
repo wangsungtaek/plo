@@ -58,7 +58,7 @@ public class MusicManagerService {
 				+ "		SELECT m.*, a.alb_name\n"
 				+ "		  FROM P_MUSIC m, P_ALBUM a\n"
 				+ "		 WHERE m.alb_no = a.alb_no\n"
-				+ "		ORDER BY a.alb_no DESC\n"
+				+ "		ORDER BY m.m_no DESC\n"
 				+ "	) music\n"
 				+ ") WHERE num BETWEEN ? AND ?";
 		System.out.println(sql);

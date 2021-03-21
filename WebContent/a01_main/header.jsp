@@ -14,7 +14,7 @@
 
 #header #header_inner #searchBox { display: inline-block; margin-left: 45px; padding: 0 30px 0 38px;
 	width: 280px; height: 32px; border: 1px solid #d2d2d2; border-radius: 17px; position: relative; top: -7px; }
-#header #header_inner #searchBox i { position: absolute; left:13px; top: 9px; }	
+#header #header_inner #searchBox button { position: absolute; left:13px; top: 6px; background: rgba(0,0,0,0); border: 1px solid white; }	
 #header #header_inner #searchBox input { position: relative; top: 8px; border: none; width: 100%; }	
 
 #header #header_inner #util_group { float: right; margin-top: 42px; margin-right: 70px;
@@ -38,47 +38,42 @@
 		</div>
 		<nav id="nav_group">
 			<ul>
-				<li><a href="${path}/a05_music/chart.jsp">둘러보기</a></li>
-				<li><a href="${path}/a10_storage/store_1.jsp">보관함</a></li>
+				<li><a href="${path}/chart.do">둘러보기</a></li>
+				<li><a href="${path}/MyList.do">보관함</a></li>
 			</ul>
 		</nav>
 		
 		<div id="searchBox">
-			<a href="${path}/a01_main/main_search_song.jsp">
-				<i class="fas fa-search search"></i>
-			</a>
-			<input name="search" type="text" placeholder="검색어를 입력하세요.">
+		<form method="get" action="${path}/ArtistSearch">
+			<button>
+				<i style="background: rgba(0,0,0,0);" class="fas fa-search search"></i>
+			</button>
+			<input style="background: rgba(0,0,0,0);" name="keyword" type="text" placeholder="검색어를 입력하세요.">
+		</form>
 		</div>
+		
 		
 		<nav id="util_group">
 			<ul>
-				<li><a href="${path}/admin">관리자</a>
-			
-				<li><a href="${path}/a01_main/intro.html" style="color:#8c8c8c;">PLO 소개</a></li>
+				<c:if test="${u.u_id == 'admin'}">
+				<li style="list-style: none;"><a href="${path}/admin">관리자</a></li>
+				</c:if>
+				<li style="list-style: none;"><a href="${path}/a01_main/intro.html" style="color:#8c8c8c;">PLO 소개</a></li>
 				
-				<c:if test="${!empty m.m_name}">	
-					<li><a href="${path}/a02_mypage/mypage.jsp" id="mypage-link">
-							<div>캐릭터1</div>
+				<c:if test="${!empty u.u_name}">	
+					<li style="list-style: none;"><a href="${path}/mypage" id="mypage-link">
+							<div>${u.u_name}</div>
 							<img src="${path}/z00_imgs/artist01.jpg">
 						</a>
 					</li>
+					<li style="list-style: none;"><a href="${path}/login.do">로그아웃</a></li>
 				</c:if>
-				<c:if test="${empty m.m_name}">
-					<li><a href="${path}/a03_login/login.jsp" style="color:#8c8c8c;">로그인</a></li>
-					<li><a href="${path}/a03_login/signin_1.jsp" style="color:#8c8c8c;">회원가입</a></li>
+				<c:if test="${empty u.u_name}">
+					<li style="list-style: none;"><a href="${path}/login.do" style="color:#8c8c8c;">로그인</a></li>
+					<li style="list-style: none;"><a href="${path}/a03_login/signin_1.jsp" style="color:#8c8c8c;">회원가입</a></li>
 				</c:if>
 			</ul>
 		</nav>
 	</div>
 
 </header>
-
-<script>
-	document.querySelector("#searchBox").onkeyup = function(){
-		if(event.keyCode == 13){
-			var searchObj = document.querySelector("[name=search]");
-			console.log(searchObj.value);
-			location.href="${path}/a01_main/main_search_song.jsp?keyword="+searchObj.value;
-		}
-	}
-</script>

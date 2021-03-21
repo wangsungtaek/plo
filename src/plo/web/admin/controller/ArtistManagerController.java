@@ -27,7 +27,7 @@ public class ArtistManagerController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("아티스트 post 호출됨");
 		request.setCharacterEncoding("utf-8");
 		
 		String isUpdate = request.getParameter("isUpdate");
@@ -54,12 +54,13 @@ public class ArtistManagerController extends HttpServlet {
 					service.artistDel(strToInt(id));
 			}
 		}
+		
 		response.sendRedirect("artistManager");
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("아티스트 get 호출됨");
 		String page = request.getParameter("p");
 		
 		ArtistManagerService service = new ArtistManagerService();

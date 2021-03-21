@@ -83,8 +83,7 @@ public class FaqService {
 				int f_pub = rs.getInt("f_pub");
 				int fc_no = rs.getInt("fc_no");
 				String faqcode_name = rs.getString("fc_name");
-
-				faqList.add(new Faq(f_no, f_title, f_content,
+				faqList.add(new Faq(f_no, f_title, f_content.replaceAll("\n", "<br>"),
 									f_pub, fc_no, faqcode_name));
 			}
 			

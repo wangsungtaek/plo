@@ -12,9 +12,9 @@
 <c:set var="music" value="${service.musicDetail(param.no)}"/>
 {
 	"m_no":"${music.m_no}",
-	"m_name":"${fn:trim(music.m_name)}",
-	"m_playnum":"${fn:trim(music.m_playnum)}",
+	"m_name":"${music.m_name}",
+	"m_playnum":"${music.m_playnum}",
 	"m_path":"${music.m_path}",
-	"m_lyrics":"${fn:trim(music.m_lyrics)}",
-	"alb_no":"${fn:trim(music.alb_no)}"
+	"m_lyrics":"${music.m_lyrics}",
+	"alb_no":"${music.alb_no}"
 }

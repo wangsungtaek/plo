@@ -12,12 +12,14 @@
 <meta charset="UTF-8">
 <title>PLO</title>
 <style>
+a{ 	text-decoration:none;  color:black; color: inherit}
+ul{list-style: none;}
 .signin_content{
-	margin:0 auto;	width:1024px;	height:1000px;		padding-top : 10px;}
+	margin:0 auto;	height:1000px;	}
 #box{
-	margin : 0 auto;	width : 620px;	height : 400px;	border : 1px solid lightgray;	margin-top : 200px;	}
+	margin : 0 auto;	width : 620px;	height : 400px;	border : 1px solid lightgray;	margin-top : 150px;	}
 #loginTable{
-	width : 400px;	height : 220px;	margin-top: 60px; margin-left : 110px; font-size:14px;}		
+	width : 400px;	height : 220px;	margin-top: 70px; margin-left : 110px; font-size:14px;}		
 #loginTable td{
 	padding : 5px; }
 .input{
@@ -32,51 +34,55 @@
 	width : 400px;	margin-left : 110px; color : gray;}
 #btnGp a{
 	 color: inherit; text-decoration: none;}
-
-
 </style>
 <script type="text/javascript" src="${path}/z02_js/jquery-3.5.1.js"></script>
-<script type="text/javascript">
-
-   $(document).ready(function(){
-	   document.querySelector("form").onsubmit=function(){
-   		var id=document.querySelector("[name=id]");
-   		var pw=document.querySelector("[name=pw]");
-   		if(id.value==""){
-   			alert("아이디를 입력하세요");
-   			return false;
-   		}
-   		else if(pw.value==""){
-   			alert("비밀번호를 입력하세요");
-   			return false;
-   		}		
-   	};
-   }
-   
-</script>
 </head>
-<body>
-	<div class="signin_content">
-		<%@ include file="../a01_main/header.jsp" %>
+<body>	
+ 	<c:if test="${ loginResult == -1||loginResult == 0 }">
+		<script>
+			alert("아이디 혹은 비밀번호가 틀렸습니다.");
+		</script>
+	</c:if>
+
+	<%@ include file="../a01_main/header.jsp" %>
+	<div class="signin_content">		
 		<div id="box">
-			<form method="post"> 
+			<form method="post" action="<%=request.getContextPath()%>/login.do"> <!-- action="login.do" -->
 				<table id="loginTable" >	
-					<tr><td><input type="text" name="id" class="input" placeholder="&nbsp;아이디 (이메일)"></td></tr>
-					<tr><td><input type="password" name="pw" class="input" placeholder="&nbsp;비밀번호"></td></tr>	
+					<tr><td><input type="text" name="id" class="input" placeholder="&nbsp;아이디"></td></tr>
+					<tr><td><input type="password" name="pass" class="input" placeholder="&nbsp;비밀번호"></td></tr>	
 					<tr><td><input type="submit" value="로그인" id="loginBtn"></td></tr>
 				</table>
 			</form>	
 			<div id="btnGp">
-				<a href="idfind_1.jsp"> 아이디 찾기</a>
-				<a href="pwfind_1.jsp">비밀번호찾기</a> 
+				<a href="${path}/a03_login/idfind_1.jsp"> 아이디 찾기</a>
+				<a href="${path}/a03_login/pwfind_1.jsp">비밀번호찾기</a> 
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="signin_1.jsp" id="joinBtn">회원가입</a>
+				<a href="${path}/a03_login/signin_1.jsp" id="joinBtn">회원가입</a>
 			</div>		
 		</div>
 		<%@ include file="../a01_main/footer.jsp" %>
+		
 	</div>
-
+	<%@ include file="../a09_playList/musicplayer.jsp" %>
 
 </body>
+<script type="text/javascript">
+   $(document).ready(function(){	   	   
+	   document.querySelector("form").onsubmit=function(){
+   		var id=document.querySelector("[name=id]");
+   		var pass=document.querySelector("[name=pass]");
+   		if(id.value==""){
+   			alert("아이디를 입력하세요");
+   			
+   			return false;
+   		}
+   		else if(pass.value==""){
+   			alert("비밀번호를 입력하세요");
+   			return false;
+   		}		
+   	};
+   }   
+</script>
 </html>

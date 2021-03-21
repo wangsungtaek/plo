@@ -57,7 +57,6 @@ public class ArtistManagerService {
 				+ "		SELECT * FROM P_ARTIST ORDER BY ART_NO DESC\n"
 				+ "	) u\n"
 				+ ") WHERE num BETWEEN ? AND ?";
-		System.out.println(sql);
 		try {
 			setCon();
 			

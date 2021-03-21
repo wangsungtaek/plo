@@ -9,7 +9,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
 <title>Document</title>
 <link rel="stylesheet" href="default.css">
 <link rel="stylesheet" href="${path}/z01_css/genre.css">
@@ -31,7 +30,9 @@
 </head>
 <body>
 	<div class="container-fluid" style="background: white;">
-        <div class="row">header</div>
+        <div class="row">
+        <jsp:include page="../a01_main/header.jsp"></jsp:include>
+        </div>
         <div class="row" >
             <div class="col-1"></div>
             <!-- 둘러보기 메인 -->
@@ -40,7 +41,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="genre-title">
-                            장르 명
+                            ${m_no }
+                            ${playbuttonM_no }
                         </div>
                     </div>
                 </div>
@@ -121,7 +123,9 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="row">footer</div>
+        <div class="row">
+        <%@include file="../a01_main/footer.jsp" %>
+        </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

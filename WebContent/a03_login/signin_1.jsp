@@ -12,9 +12,10 @@
 <meta charset="UTF-8">
 <title>PLO</title>
 <style>
-
+a{ 	text-decoration:none;  color:black; color: inherit}
+ul{list-style: none;}
 .signin_content{
-	margin:0 auto;	width:1024px;	height:1000px;	padding-top : 10px;}
+	margin:0 auto;	height:1200px;	}
 .logo{
 	width : 72px;	height : 32px;	display : absolute; margin-left : 47%;	margin-top : 150px;	}
 #box{
@@ -53,8 +54,9 @@ button:focus{
 
 </head>
 <body>
+	<%@ include file="../a01_main/header.jsp" %>
 	<div class="signin_content">
-		<%@ include file="../a01_main/header.jsp" %>
+		
 		<img class="logo" src="../z00_imgs/logo.png"/>
 		
 		<div id="box">
@@ -64,27 +66,27 @@ button:focus{
 	   		<table id="check_tab" border>
 	   			<col width="75%"><col width="25%">
 	   			<tr>
-	   				<td><label><input type="checkbox" id="chbx">  
+	   				<td><label><input type="checkbox" id="ckbx">  
 	   					<span id="color">(필수)</span> 이용약관</label></td>
 	   				<td><span id="allText1">전문보기</span></td>
 	   			</tr>
 	   			<tr>
-	   				<td><label><input type="checkbox" id="chbx">  
+	   				<td><label><input type="checkbox" id="ckbx">  
 	   					<span id="color">(필수)</span> 개인정보 수집 및 이용안내 </label></td>
 	   				<td><span id="allText2">전문보기</span></td>
 	   			</tr>
 	   			<tr>
-	   				<td><label><input type="checkbox" id="chbx" >  
+	   				<td><label><input type="checkbox" id="ckbx" >  
 	   					<span id="color">(필수)</span> 제 3자 제공 동의 </label></td>
 	   				<td><span id="allText3">전문보기</span></td>
 	   			</tr>
 	   			<tr>
-	   				<td><label><input type="checkbox" id="chbx" >  
+	   				<td><label><input type="checkbox" id="ckbx" >  
 	   					(선택) 제 3자 제공, 처리위탁 동의 </label></td>
 	   				<td><span id="allText4">전문보기</span></td>
 	   			</tr>
 	   			<tr>
-	   				<td><label><input type="checkbox" id="chbx">  
+	   				<td><label><input type="checkbox" id="ckbx">  
 	   					(선택) 광고 수신 동의 </label></td>
 	   				<td><span id="allText5">전문보기</span></td>
 	   			</tr>
@@ -92,17 +94,14 @@ button:focus{
 			<hr id= "bottomline">
 			
 	   		<div id="allCheck">
-	   			<input type="checkbox" name="allcheck"/>  
+	   			<input type="checkbox" onclick="allSelect()" id="allCk"/>  
 		   		<span style="font-weight:bold; font-size:17px;">전체동의</span><br>
 				<span style="color : gray; font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(선택)  광고 수신 동의를 포함하여 모두 동의합니다.</span>
 	   			<button id="nextBtn"><span style="font-weight:bold; color:#fff; font-size:15px;">다음</span></button>
-	   		</div>
-	   		
-	   		
-		</div>
-		<%@ include file="../a01_main/footer.jsp" %>
+	   		</div>	   			   		
+		</div>		
    </div>
-
+	<%@ include file="../a01_main/footer.jsp" %>
    
    	   		
 	<div id="popup1">
@@ -235,6 +234,7 @@ button:focus{
 		    </p>
 		</div>
 	</div>
+	<%@ include file="../a09_playList/musicplayer.jsp" %>
 </body>
 <script type="text/javascript">
 	
@@ -274,7 +274,7 @@ button:focus{
 	    	$("input").prop("checked",true);
 	    })
 	    
-	    var checkboxObj=document.querySelectorAll("#chbx");
+	    var checkboxObj=document.querySelectorAll("#ckbx");
 	    $("#nextBtn").click(function(){
 	    	
 	    	if(!checkboxObj[0].checked){
@@ -294,7 +294,15 @@ button:focus{
 			}	 	    	
 	    	location.href="signin_2.jsp";
 	    })
-		      
+	    
+	 // 체크박스
+		$("#allCk").click(function(){
+			if($("input:checkbox[id='allCk']").prop("checked")){
+				$("input[type=checkbox]").prop("checked",true);
+			} else{
+				$("input[type=checkbox]").prop("checked",false);
+			}
+		})
 	});
 
 

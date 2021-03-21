@@ -43,9 +43,8 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-			id="accordionSidebar">
+		<ul class="navbar-nav sidebar sidebar-dark accordion"
+			id="accordionSidebar" style="background: #ff8533;">
 
 			<!-- Sidebar - Brand -->
 			<a
@@ -187,7 +186,7 @@
 					<!-- DataTale -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">앨범 조회</h6>
+							<h6 class="m-0 font-weight-bold" style="color:#ff8533;">앨범 조회</h6>
 						</div>
 
 						<!-- DataTable : Data -->
@@ -251,22 +250,23 @@
 									<div class="btn-group" role="group"
 										aria-label="Basic radio toggle button group">
 										
-										<button type="button" class="btn btn-outline-primary" ${(startNum <= 1)?'disabled':''}
+										<button type="button" class="btn" style="color:#ff8533; border:1px solid #ff8533;" ${(startNum <= 1)?'disabled':''}
 										onclick="paging(${startNum-1})">
 											Previous
 										</button>
 										
 										<c:forEach begin="${startNum}" end="${startNum+4}" varStatus="status">
 											<c:if test="${lastNum >= status.current}">
-											<button type="button"
-												class="btn btn-${((page)==(status.current))?'':'outline-'}primary"
+											<button type="button" class="btn" 
+												style="color:${((page)==(status.current))?'white':'#ff8533'};
+													 border:1px solid #ff8533; background: ${((page)==(status.current))?'#ff8533':'white'};"
 												onclick="paging(${status.current})">
 												${status.index}
 											</button>
 											</c:if>
 										</c:forEach>
 										
-										<button type="button" class="btn btn-outline-primary" ${(lastNum <= startNum+4)?'disabled':''}
+										<button type="button" class="btn" style="color:#ff8533; border:1px solid #ff8533;" ${(lastNum <= startNum+4)?'disabled':''}
 										onclick="paging(${startNum+5})">
 											Next
 										</button>
@@ -337,7 +337,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-bs-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-primary"
+					<button type="button" class="btn" style="background: #ff8533; color: white;"
 						data-bs-dismiss="modal" id="update">수정</button>
 				</div>
 			</div>

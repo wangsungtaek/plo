@@ -23,10 +23,20 @@ SELECT * FROM (
 	SELECT ROWNUM num, u.* FROM (
 		SELECT * FROM P_USER ORDER BY U_NO
 	) u
-) WHERE num BETWEEN 1 AND 99999;
-
--- 회원 조회
+) WHERE num BETWEEN 1 AND 10;
+SELECT * FROM P_USER;
+-- 회원 상세
 SELECT * FROM P_USER WHERE u_no = 1;
+-- 음원 상세
+SELECT * FROM P_MUSIC WHERE m_no = 10;
+-- 앨범 상세
+SELECT * FROM P_ALBUM WHERE alb_no = 1;
+-- 아티스트 상세
+SELECT * FROM P_ARTIST WHERE art_no = 1;
+-- 공지사항 상세
+SELECT * FROM P_NOTICE WHERE n_no = 1;
+-- FAQ 상세
+SELECT * FROM P_FAQ WHERE f_no = 1;
 
 -- 회원 업데이트
 UPDATE P_USER
@@ -45,6 +55,7 @@ SELECT * FROM (
 
 SELECT * FROM P_ARTIST;
 SELECT * FROM P_USER;
+SELECT * FROM P_NOTICE;
 
 -- 아티스트 업데이트
 UPDATE P_ARTIST
@@ -113,10 +124,10 @@ SELECT * FROM (
 	SELECT ROWNUM num, n.* FROM (
 		SELECT * FROM P_NOTICE ORDER BY n_no DESC
 	) n
-) WHERE num BETWEEN 1 AND 4;
+) WHERE num BETWEEN 1 AND 10;
 
 -- 공지사항 상세
-SELECT * FROM P_NOTICE WHERE n_no = 1; 
+SELECT * FROM P_NOTICE WHERE n_no = 1;
 
 -- 공지사항 등록
 INSERT INTO P_NOTICE
@@ -156,3 +167,33 @@ SELECT * FROM P_FAQ_CODE;
 
 -- 장르조회
 SELECT * FROM P_FAQ_CODE;
+
+
+DELETE P_USER WHERE u_no = 1;
+
+
+DELETE P_ARTIST WHERE art_no = ?
+DELETE P_ALBUM WH ERE alb_no = ?
+DELETE P_MUSIC WHERE m_no = ?
+DELETE P_NOTICE WHERE n_no = ?
+
+-- 유저 등록
+INSERT INTO P_USER VALUES(P_USER_NO_SEQ.NEXTVAL, 'admin', 'admin', '관리자', 'admin@naver.com', sysdate);
+-- 아티스트 등록
+INSERT INTO P_ARTIST VALUES(P_ARTIST_NO_SEQ.NEXTVAL, '아이유', '여성', '솔로', '/img/artist/iu.png');
+-- 앨범 등록
+INSERT INTO P_ALBUM 
+	VALUES(P_ALBUM_NO_SEQ.NEXTVAL, 'Celebrity', '싱글', to_date('2021.01.27','yyyy.mm.dd'),
+	       '/img/album/celebrity.png', '아이유(iu) 정규5집 선공개 무려 4년 만에...',1);
+-- 장르 등록
+INSERT INTO P_GENRE VALUES(1, '댄스 팝');
+-- 음악 등록
+INSERT INTO P_MUSIC
+	VALUES(P_MUSIC_NO_SEQ.NEXTVAL, 'Celebrity', 110, '/img/music/celebrity.png',
+		   '세상의 모서리 구부정하게 커버린 골칫거리..', 1);
+-- 공지사항 등록
+INSERT INTO P_NOTICE 
+	VALUES(P_NOTICE_NO_SEQ.NEXTVAL, '[서비스 점검] 각 은행...',
+		  '안녕하세요. PLO입니다..', to_date('2021.01.02','YYYY.MM.DD'), 1);
+-- FAQ 등록
+INSERT INTO P_FAQ VALUES(P_FAQ_NO_SEQ.NEXTVAL, '다크 모드는 어떻게 사용하나요', '이제 PLO에서도 ....', 1, 1);

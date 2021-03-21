@@ -12,7 +12,7 @@
     vertical-align: baseline;
 }
 .playlist_ct,
-.player_ct,
+ .player_ct,
 .playlist_ct div,
 .player_ct div,
 .playlist_ct ul,
@@ -24,7 +24,7 @@
     font: inherit;
     vertical-align: baseline;
     list-style:none;
-}
+} 
 .playlist_ct ::after,
 .player_ct ::after {
 	box-sizing: content-box;
@@ -220,7 +220,7 @@
 .playlist_ct .track_area.pause .artist, 
 .playlist_ct .track_area.pause .badge_track_info .title_modify, 
 .playlist_ct .track_area.pause .title {
-    color: #3f3fff;
+    color: #FF8533;
 }
 /* 재생목록 - 트랙 - 앨범이미지 */
 .playlist_ct .track_area .thumb {
@@ -265,7 +265,7 @@
 .playlist_ct .track_area.now .thumb:after {
     width: 17px;
     height: 17px;
-    background-image: url(../z00_imgs/playlist_thumb.gif);
+    background-image: url(../z00_imgs/playlist_thumb2.gif);
     background-size: 100% 100%;
 }
 
@@ -431,7 +431,7 @@
     padding-top: 12px;
     font-size: 18px;
     display: block;
-/*    overflow: hidden;*/
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #fff;
@@ -793,9 +793,248 @@ input[type=range]:focus {
     position: relative;
     width: 801px;
 }
+.snack_bar p {
+    text-align: center;
+}
 .snack_bar p.txt1 {
     line-height: 27px;
     color: #fff;
     font-size: 15px;
+}
+.snack_bar p.txt2 {
+    line-height: 20px;
+    color: #989898;
+    font-size: 14px;
+}
+
+.snack_bar.snackbar_static {
+    z-index: 300;
+}
+.snack_bar a {
+    margin-left: 10px;
+    color: #FF8533;
+}
+.snack_bar a:after {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -569px -683px;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    vertical-align: -2px;
+    content: "";
+}
+.snack_bar button {
+	border: none;
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -621px -658px;
+    width: 17px;
+    height: 17px;
+    color: transparent;
+    text-indent: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    outline: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+/* 레이어 드롭다운 메뉴 */
+.playlist_ct .playlist_util .layer_dropdown {
+	position: absolute;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 10%);
+    background: #fff;
+    
+    z-index: 200;
+    top: 48px;
+    right: 0;
+}
+.layer_dropdown ul {
+    width: 100%;
+    padding: 10px 0;
+}
+.layer_dropdown li {
+    text-align: left;
+}
+.layer_dropdown li:hover {
+    background: #F6F6F6;
+}
+.layer_dropdown li a, .layer_dropdown li button {
+    display: block;
+    position: relative;
+    padding-left: 17px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: left;
+    color: #353535;
+}
+.layer_dropdown li i {
+    color: transparent;
+    text-indent: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 8px;
+}
+.layer_dropdown .ico_info_music {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -640px -628px;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown li a:hover .ico_info_music, .layer_dropdown li button:hover .ico_info_music {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -677px 0;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown .ico_info_album {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -388px -628px;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown li a:hover .ico_info_album, .layer_dropdown li button:hover .ico_info_album {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -416px -628px;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown .ico_info_artist {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -444px -628px;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown li a:hover .ico_info_artist, 
+.layer_dropdown li button:hover .ico_info_artist {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -472px -628px;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown li button {
+    width: 100%;
+}
+.layer_dropdown .ico_like {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -556px -628px;
+    width: 23px;
+    height: 23px;
+}
+.layer_dropdown li a:hover .ico_like,
+.layer_dropdown li button:hover .ico_like {
+	background-image:url(../z00_imgs/button_img.png);
+	background-position:-584px -628px;
+	width:23px;
+	height:23px}
+
+.layer_track_table_more li button:hover:after {
+display:none
+}
+
+.btn_list_more.hover:after, .btn_list_more:hover:after {
+background-image:url(../z00_imgs/icon_img.png);
+background-position:-157px -485px;
+width:12px;
+height:11px
+}
+
+.layer_dropdown li a:hover:after,
+.layer_dropdown li button:hover:after {
+background-image:url(../z00_imgs/icon_img.png);
+background-position:-123px -485px;
+width:12px;
+height:12px;
+position:absolute;
+top:14px;
+right:20px;
+display:block;
+content:""
+}
+
+/* 팝업 컨테이너 */
+.popup_container {
+    z-index: 3001;
+}
+.popup_container, .popup_container:after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.popup_container:after {
+    background: rgba(0,0,0,.6);
+    content: "";
+}
+.popup_w {
+    position: absolute;
+    width: 450px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 4px 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 10%);
+    background: #fff;
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    padding: 30px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.popup_w .popup_content {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.popup_w .popup_content .popup_text {
+    font-size: 15px;
+    color: #484848;
+    line-height: 1.47;
     text-align: center;
+}
+.popup_w .popup_content .popup_text.align-left {
+    text-align: left;
+}
+.popup_w .popup_button_w {
+    margin: 40px 0 0 0;
+    text-align: center;
+}
+.btn_bg_white_s {
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+    min-width: 85px;
+    height: 36px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #484848;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #bebebe;
+}
+.popup_w .popup_button_w button {
+    margin: 0 5px;
+}
+.btn_bg_orange_s {
+	outline: none;
+	cursor: pointer;
+	border: none;
+    min-width: 85px;
+    height: 36px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #FF8533;
 }

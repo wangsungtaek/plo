@@ -42,7 +42,7 @@ public class NoticeManagerController extends HttpServlet {
 				String n_content = request.getParameter("n_content");
 				String n_date = request.getParameter("n_date");
 				String n_pub = request.getParameter("n_pub");
-				
+				if(n_pub == null || n_pub.equals("")) n_pub = "0";
 				
 				NoticeManagerService service = new NoticeManagerService();
 				RegNotice notice = new RegNotice();

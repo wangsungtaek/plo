@@ -13,9 +13,11 @@
 <title>PLO</title>
 <style>
 .signin_content{
-	margin:0 auto;	width:1024px;	height:1000px;	padding-top : 10px;	}
+	margin:0 auto;	height:800px;	}
+a{ 	text-decoration:none;  color:black; color: inherit}
+ul{list-style: none;}
 #box{
-	margin : 0 auto;	width : 620px;	height : 600px;	border : 1px solid lightgray;	margin-top : 200px; 	}
+	margin : 0 auto;	width : 620px;	height : 600px;	border : 1px solid lightgray;	margin-top : 150px; 	}
 .logo {
 	width : 72px;	height : 32px;  margin-left : -274px;	margin-left : 45%;	margin-top : 50px;	}
 #joinTable{
@@ -32,15 +34,43 @@
 	outline : none; }
 </style>
 <script type="text/javascript" src="${path}/z02_js/jquery-3.5.1.js"></script>
+
+</head>
+<body>
+	<%@ include file="../a01_main/header.jsp" %>
+	<div class="signin_content">		
+		<div id="box">
+			<img class="logo" src="${path}/z00_imgs/logo.png"/>
+			
+			<form method="post" action="<%=request.getContextPath()%>/signin_2"> 
+				<table id="joinTable" >				
+					<tr><td><input type="text" name="name" class="input" placeholder="&nbsp;&nbsp;이름"></td></tr>
+					<tr><td><input type="email" name="mail" class="input" placeholder="&nbsp;&nbsp;이메일주소 (example@google.com)"></td></tr>
+					<tr><td><input type="date" name="date" class="input" placeholder="&nbsp;&nbsp;생년월일"></td></tr>
+					<tr><td><input type="text" name="id" class="input" placeholder="&nbsp;&nbsp;아이디 (4~16자)"></td></tr>
+					<tr><td><input type="password" name="pass" class="input" placeholder="&nbsp;&nbsp;비밀번호 (8자~16자)"></td></tr>
+					<tr><td><input type="password" name="passck" class="input" placeholder="&nbsp;&nbsp;비밀번호확인"></td></tr>			
+				</table>
+				<button id="doneBtn"><span style="font-weight:bold; color:#fff; font-size:15px;">가입 완료</span></button>
+			</form>							
+		</div>	
+	</div>
+	<%@ include file="../a01_main/footer.jsp" %>
+	<%@ include file="../a09_playList/musicplayer.jsp" %>
+</body>
 <script type="text/javascript">
 
-   $(document).ready(function(){
+   $(document).ready(function(){	  
+		var regCheck = "${result}";		
+		if(regCheck == 'true'){			
+			location.href="${path}/a03_login/signin_3.jsp";
+		}	   
 	    var nameObj=document.querySelector("[name=name]");
-		var emailObj=document.querySelector("[name=email]");
-		var birthObj=document.querySelector("[name=birth]");
+		var emailObj=document.querySelector("[name=mail]");
+		var birthObj=document.querySelector("[name=date]");
 	    var idObj=document.querySelector("[name=id]");
-		var pass1Obj=document.querySelector("[name=pass1]");
-		var pass2Obj=document.querySelector("[name=pass2]");
+		var pass1Obj=document.querySelector("[name=pass]");
+		var pass2Obj=document.querySelector("[name=passck]");
 		
 	    $("#doneBtn").click(function(){
 	    	if(nameObj.value==""){
@@ -57,13 +87,6 @@
 				alert("생년월일을 입력하세요.");
 				birthObj.focus();
 				return false;
-			}else{
-		        if(birthObj.value.length != 6 ){
-		       		alert("생년월일을 6글자로 입력하세요.(YYMMDD)");
-		       		birthObj.value="";
-		       		birthObj.focus();
-		            return false;
-		        }	
 			}
 	    	if(idObj.value==""){
 				alert("id를 입력하세요.");
@@ -111,33 +134,10 @@
 				alert("비밀번호를 동일하게 입력해주세요");
 				pass1Obj.focus();
 				return false;
-			}	    		    		    	 	    		    		    
-	    	location.href="signin_3.jsp";
+			}
+			$("form").submit();
+			location.href='${path}/a03_login/signin_3.jsp';
    		});
-   
    });
 </script>
-</head>
-<body>
-	<div class="signin_content">
-		<%@ include file="../a01_main/header.jsp" %>
-		<div id="box">
-			<img class="logo" src="../z00_imgs/logo.png"/>
-			
-			<form method="post"> 
-				<table id="joinTable" >				
-					<tr><td><input type="text" name="name" class="input" placeholder="&nbsp;&nbsp;이름"></td></tr>
-					<tr><td><input type="email" name="email" class="input" placeholder="&nbsp;&nbsp;이메일주소 (example@google.com)"></td></tr>
-					<tr><td><input type="text" name="birth" class="input" placeholder="&nbsp;&nbsp;생년월일 (YYMMDD)"></td></tr>
-					<tr><td><input type="text" name="id" class="input" placeholder="&nbsp;&nbsp;아이디 (4~16자)"></td></tr>
-					<tr><td><input type="password" name="pass1" class="input" placeholder="&nbsp;&nbsp;비밀번호 (8자~16자)"></td></tr>
-					<tr><td><input type="password" name="pass2" class="input" placeholder="&nbsp;&nbsp;비밀번호확인"></td></tr>			
-				</table>
-			</form>				
-			<button id="doneBtn"><span style="font-weight:bold; color:#fff; font-size:15px;">가입 완료</span></button>
-		</div>
-		<%@ include file="../a01_main/footer.jsp" %>
-	</div>
-
-</body>
 </html>

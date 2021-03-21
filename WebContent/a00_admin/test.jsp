@@ -10,48 +10,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css" >
-<link rel="stylesheet" href="${path}/a00_com/jquery-ui.css" >
-<script src="${path}/a00_com/jquery.min.js"></script>
-<script src="${path}/a00_com/popper.min.js"></script>
-<script src="${path}/a00_com/bootstrap.min.js"></script>
-<script src="${path}/a00_com/jquery-ui.js"></script>
-
-<script type="text/javascript">
-<%--
- 
- 
---%>
-//
-	$(document).ready(function(){
-	  
-	});
-</script>
 </head>
 <body>
-	<div class="jumbotron text-center">
-		<h2>부트스트랩 form</h2>
-	</div>
-	<div class="container">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			<form class="form-inline" method="post" action="${path}/">
-				<input class="form-control mr-sm-2" type="text" name="ename" value="" placeholder="사원명">
-				<input class="form-control mr-sm-2" type="text" name="job" value="" placeholder="직책명">
-				<button class="btn btn-success" type="submit">Search</button>
-			</form>
-		</nav>
-		<table class="table table-hover">
-			<thead>
-				<tr class="table-success text-center">
-					<th>타이틀</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="text-center">
-					<td>내용</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<form method="get">
+		<input type="text" name="test"/>
+		<button>전송</button>
+	</form>
 </body>
+<script>
+	console.log("${test}");
+</script>
 </html>

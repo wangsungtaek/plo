@@ -1,8 +1,8 @@
 #tour {
-  margin: 0 4em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-bottom:120px;
 }
 
 #main-header {
@@ -17,18 +17,18 @@
   margin: 8px;
   height: 32px;
   font-size: 10pt;
-  transition:0.5s;
 }
-
+#genre-icon-form{
+	width:100%;
+	display:flex;
+}
 .genre-icons:focus {
   background: orange;
   color:white;
-  flex: 1.5 1 0;
 }
 .genre-icons:hover {
   border: 1px solid orange;
   color: gray;
-  flex: 1.5 1 0;
 }
 .chart-title {
   margin-bottom: 20px;
@@ -58,16 +58,30 @@ tbody button {
 
 th,
 td {
-  padding: 10px;
-  border-bottom: 1px solid lightgray;
+	  padding: 10px;
+	  border-bottom: 1px solid lightgray;
+	  display:flex;
 }
 .a{
 	padding:-8px 0px;
 }
-
+.chart-table tr{
+	display:flex;
+}
+.chart-table tfoot tr{
+	display:flex;
+	justify-content: center;
+  	align-items: center;
+}
+.tableheaderchild{
+	display:flex;
+  	align-items: center;
+}
 .tableheaderchild:nth-child(3) {
-  display: flex;
-  width: 100%;
+  display:flex;
+}
+.tableheaderchild input{
+	cursor: pointer;
 }
 .title_image{
 	width: 60px;
@@ -76,12 +90,20 @@ td {
 	background-repeat: no-repeat;
   	background-position: center;
   	background-size: 100%;
+  	border:none;
+  	color:rgba(0,0,0,0);
 }
 .title_album {
   display: flex;
+  height:100%;
   flex-direction: column;
   justify-content: space-around;
   margin-left:10px;
+}
+.title_album input{
+	background:none;
+	border:none;
+	font-weight: bold;
 }
 .chart-more {
   background: white;
@@ -92,6 +114,10 @@ td {
   padding: 3px 20px;
 }
 .chart-more:hover {
+  border: 1px solid orange;
+  color: orange;
+}
+.chart-more:focus {
   border: 1px solid orange;
   color: orange;
 }
@@ -183,43 +209,8 @@ tfoot tr td {
   border: 1px solid orange;
   color: orange;
 }
-.more-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 200px;
-  z-index: 1;  
-  padding: 10px 0px;
-  box-shadow: 0px 0px 1px 3px whitesmoke;
-  border-radius:2px;
-}
-
-.more-content a {
-  text-align: left;
-  display: block;
-  color: black;
-  padding: 12px 16px;
-  font-size: 10pt;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.more-content a:hover {
-  background: whitesmoke;
-  color: orange;
-}
-
-.more-content a:hover .more-content-icons {
-  color: rgba(0, 0, 0, 0.1);
-}
 
 input:focus{
 border:none;
   outline: none;
-}
-.more-content a .more-content-check {
-  display: none;
-}
-.more-content a:hover .more-content-check {
-  display: inline;
 }

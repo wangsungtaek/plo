@@ -168,6 +168,12 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
+.badge_track_info .btn_add_list:hover {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -437px -322px;
+    width: 41px;
+    height: 41px;
+}
 .badge_track_info .btn_add_playlist {
     background-image: url(../z00_imgs/button_img.png);
     background-position: -437px -46px;
@@ -179,6 +185,12 @@
     white-space: nowrap;
     overflow: hidden;
 }
+.badge_track_info .btn_add_playlist:hover {
+	background-image: url(../z00_imgs/button_img.png);
+    background-position: -437px 0px;
+    width: 41px;
+    height: 41px;
+}
 .badge_track_info .btn_like {
     background-image: url(../z00_imgs/button_img.png);
     background-position: -381px -240px;
@@ -189,6 +201,18 @@
     vertical-align: middle;
     white-space: nowrap;
     overflow: hidden;
+}
+.badge_track_info .btn_like:hover {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -381px -194px;
+    width: 41px;
+    height: 41px;
+}
+.badge_track_info .btn_like.active, .badge_track_info .btn_like.active:hover {
+    background-image: url(../z00_imgs/button_img.png);
+    background-position: -381px -332px;
+    width: 41px;
+    height: 41px;
 }
 .section_content_wrap {
     position: relative;

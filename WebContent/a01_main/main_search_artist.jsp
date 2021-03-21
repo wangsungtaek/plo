@@ -11,23 +11,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Plo</title>
-<link rel="stylesheet" href="../z01_css/default.css">
+<script src="${path}/z02_js/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="${path}/z01_css/default.css">
 <script type="text/javascript" src="/jspexp/a00_com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 
 </script>
 <style>
 
-  .section_inner {
+   body{
+    margin:0px;
+    padding:0px;
+    }
+   
+   .section_inner {
     width: 1080px;
-    height: 700px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 70px;
+    padding-bottom:110px;
     }
     
     .text{
-     font-weight:bold;
-     font-size:20px;
+    font-weight:bold;
+    font-size:20px;
     }
    
     .tab{
@@ -36,56 +42,61 @@
     padding-right: 40px;
     height: 32px;
     float:right;
-     }
+    }
   
-  .section_search .tab{
-   margin-top:25px;
-   }
+    .section_search .tab{
+    margin-top:25px;
+    }
   
-  .tab{
-  overflow: hidden;
-  position: relative;
-  padding-right: 40px 10px;
-  height: 50px;
-  top:-20px;
-  font-size:15px;
-  font-weight:bold;
-  }
-  
-  .tab li{
-  display:inline-block;
-  padding:10px 30px; 
-  } 
-  
-  .albumC{
-  color:#FF8533;
-  }
+    .tab{
+    overflow: hidden;
+    position: relative;
+    padding-right: 40px 30px;
+    height: 50px;
+    top:-20px;
+    font-size:15px;
+   font-weight:bold;
+    }
    
-  .album{
-  display:inline-block;
-  height:500px;
-  width:1028px;
-  }
+    .tab li{
+    display:inline-block;
+    padding:10px 30px; 
+    } 
   
-  .albumDetail{
-   display:inline-block;
-   height:150px;
-   width:150px;
-   padding:20px;
+    .albumC{
+    color:#FF8533;
+    }
+   
+    .album{
+    display:inline-block;
+    height:700px;
+    width:1028px;
+    }
+  	
+    li {
+   	text-decoration: none;
+   	list-style: none;
+    }
+  
+   .albumDetail{
+    display:inline-block;
+    height:150px;
+    width:150px;
+    padding:20px;
+    font-size:15px;
+    font-weight:bold;
+    }
+  
+   .albumText{
    font-size:15px;
    font-weight:bold;
-  }
-  
-  .albumText{
-  font-size:15px;
-  font-weight:bold;
-  }
-  
-  .albumArtist{
-   font-size:15px;
-   font-weight:bold;
-   top:-30px;
    }
+  
+   .albumArtist{
+    font-size:15px;
+    font-weight:bold;
+    top:-30px;
+    }
   
 </style>
 <script type="text/javascript">
@@ -98,84 +109,50 @@
    <div class="page">
    <div class="section_inner">
    <div class="text">
-    <h2>'블랙핑크' 검색결과</h2>
+    <h2></h2>
     </div>
 
   <div class="tab">
- 
+<%
+String keyword = request.getParameter("keyword");
+%>
+
+
  <ul>
-   <li><a href="main_search_song.jsp">곡</a></li>
-   <li><a href="main_search_album.jsp">앨범</a></li>
-   <li class="albumC"><a href="main_search_artist.jsp">아티스트</a></li>
-   <li><a href="main_search_lyrics.jsp">가사</a></li>
+   <li><a href="${path}/MusicSearch?keyword=${param.keyword}">곡</a></li>
+   <li><a href="${path}/AlbumSearch?keyword=${param.keyword}">앨범</a></li>
+   <li class="albumC"><a href="${path}/ArtistSearch?keyword=${param.keyword}">아티스트</a></li>
+   <li><a href="${path}/LyricsSearch?keyword=${param.keyword}">가사</a></li>
  </ul>
 
   </div>
 
+
 <div class="album">
- <ul>
-   <li>
-    <img src="../z00_imgs/main_search_artist02.PNG" width="150px" height="150px">
-     <span class="albumDetail">
-     <div class="albumText">
-     <a href="#">BLACKPINK</a><br><br><br>
-     </div>
-     <div class="albumArtist">
-      <a href="#">그룹</a>
-        <br><br>
-      <br><br>
-     </div>
-     </span>
-  
-    <img src="../z00_imgs/main_search_artist01.PNG" width="150px" height="150px">
-     <div class="albumDetail">
-     <div class="albumText">
-       <a href="#">로제</a><br><br><br>
-    </div>
-    <div class="albumArtist">
-       <a href="#">솔로</a><br><br>
-       <br><br>
-    </div>
-    </div>
-   </li>
-  
-   <li>
-   <img src="../z00_imgs/main_search_artist03.PNG" width="150px" height="150px">
-    <div class="albumDetail">
-    <div class="albumText">
-      <a href="#">지수</a><br><br><br>
-   </div>
-   <div class="albumArtist">
-      <a href="#">솔로</a><br><br><br><br>
-    </div>
-    </div>
- 
-  <img src="../z00_imgs/main_search_artist04.PNG" width="150px" height="150px">
-   <div class="albumDetail">
-   <div class="albumText">
-       <a href="#">제니</a><br><br><br>
-  </div>
-  <div class="albumArtist">
-       <a href="#">솔로</a><br><br><br><br>
-    </div>
-    </div>
-     </li>
+
+ <c:forEach var="artist" items="${artistList}">
+   <li>   
+    <img src="${path}/${artist.art_img }" width="150px" height="150px">
+    <!-- path가 이미 sql에 지정되어 있었음 -->
+      <span class="albumDetail">
+      <div class="albumText">
+      ${artist.art_name }<br><br><br>
+      </div>
+      <div class="albumArtist">
      
-     <li>
-     <img src="../z00_imgs/main_search_artist05.PNG" width="150px" height="150px">
-   <div class="albumDetail">
-   <div class="albumText">
-       <a href="#">리사</a><br><br><br>
-  </div>
-  <div class="albumArtist">
-       <a href="#">솔로</a><br><br><br><br>
-    </div>
-    </div>
-  </li>
+        <br><br>
+       <br><br>
+      </div>
+      </span>  
+   </li>
+  </c:forEach>
+  
+  
+
+ <%@ include file="footer.jsp"%>
  </div>
- </div>
-</ul>
+
 </div>
-<%@ include file="footer.jsp"%>
+<%@include file="../a09_playList/musicplayer.jsp" %>
 </body>
 </html>

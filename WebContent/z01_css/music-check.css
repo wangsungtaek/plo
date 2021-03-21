@@ -1,5 +1,5 @@
 .music-check-box{
-        display:flex;
+        display:none;
         position: fixed;
         width:340px;
         left: 39%;
@@ -20,7 +20,8 @@
     width : 70%;
     height: 90%;
     margin : 0px 2px;
-    
+    border: none;
+	background: none;
 }
 .music-check-shape{
     width:100%;
@@ -30,6 +31,8 @@
     
 }
 .music-shape-info{
+	background:none;
+	border:none;
     color: white;
     font-weight: bold;
     font-size: 9pt;

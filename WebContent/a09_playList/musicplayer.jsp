@@ -12,112 +12,11 @@
 		<div class="playlist_header_util">
 			<ul class="player_util"></ul>
 			<ul class="list_edit">
-				<li>
-					<button type="button">편집</button>
-				</li>
-				<li>
-					<button type="button" class="btn_playlist">그룹열기</button>
-				</li>
+				<li><button type="button">편집</button></li>
+				<li><button type="button" class="btn_playlist">그룹열기</button></li>
 			</ul>
 		</div>
 		<div id="PITEM_SINGLE_WRAPPER" class="playlist_scroll">
-<%--  재생목록에 곡 없을 때
-			<div class="notfount_txt">
-				<div>
-					<em>재생목록에 담긴 곡이 없습니다.</em>
-				</div>
-			</div>
---%>
-			<div class="playlist_section">
-				<span>
-					<%-- 리스트 --%>
-					<div id="PITEM_SINGLE" class="playlist_item group_area"> <%-- class=" pause(닫기,정지) now(닫기,플레이) / open(열기) --%>
-						<div groupid="" class="track_item">
-							<button type="button" class="list_title">
-								<span>리스트 이름</span>
-							</button>
-							<div class="list_track">
-								<span>
-									<%-- 곡 --%>
-									<div id="PITEM_SINGLE" class="playlist_item track_area">
-										<div class="track_item">
-											<a href="#" class="thumb" style="background-image:url('${path}/z00_imgs/track_thumb_img1.jpg')">
-											</a>
-											<button type="button" class="btn_track_select">
-												<div class="track_info">
-													<p class="title">
-														<span style="--translateX-to: 0px; --animation-duration: 0s;">곡명이 길어집니다 계속계속 길어집니다 곡명이 언제까지 길어질까요</span>
-													</p>
-													<p class="artist">가수명</p>
-												</div>
-											</button>
-										</div>	
-										<div class="playlist_util"></div>
-									</div> <%-- track_area --%>
-								</span>
-							</div>
-						</div>
-						<div class="playlist_util"></div>
-					</div><%-- group_area --%>
-					<div id="PITEM_SINGLE" class="playlist_item track_area">
-						<div data-no="1" class="track_item">
-							<a href="#" class="thumb" style="background-image:url('${path}/z00_imgs/track_thumb_img1.jpg')">
-							</a>
-							<button type="button" class="btn_track_select">
-								<div class="track_info">
-									<p class="title">
-										<span style="--translateX-to: 0px; --animation-duration: 0s;">Fly away(inst)</span>
-									</p>
-									<p class="artist">권진아</p>
-								</div>
-							</button>
-						</div>	
-						<div class="playlist_util"></div>
-					</div>
-					<div id="PITEM_SINGLE" class="playlist_item track_area">
-						<div data-no="2" class="track_item">
-							<a href="#" class="thumb" style="background-image:url('${path}/z00_imgs/track_thumb_img1.jpg')">
-							</a>
-							<button type="button" class="btn_track_select">
-								<div class="track_info">
-									<p class="title">
-										<span style="--translateX-to: 0px; --animation-duration: 0s;">내 손을 잡아(inst)</span>
-									</p>
-									<p class="artist">아이유(IU)</p>
-								</div>
-							</button>
-						</div>	
-						<div class="playlist_util"></div>
-					</div>
-					<div id="PITEM_SINGLE" class="playlist_item group_area"> 
-						<div groupid="" class="track_item">
-							<button type="button" class="list_title">
-								<span>리스트 이름</span>
-							</button>
-							<div class="list_track">
-								<span>
-									<div id="PITEM_SINGLE" class="playlist_item track_area">
-										<div class="track_item">
-											<a href="#" class="thumb" style="background-image:url('${path}/z00_imgs/track_thumb_img1.jpg')">
-											</a>
-											<button type="button" class="btn_track_select">
-												<div class="track_info">
-													<p class="title">
-														<span style="--translateX-to: 0px; --animation-duration: 0s;">곡명</span>
-													</p>
-													<p class="artist">가수명</p>
-												</div>
-											</button>
-										</div>	
-										<div class="playlist_util"></div>
-									</div>
-								</span>
-							</div>
-						</div>
-						<div class="playlist_util"></div>
-					</div>
-				</span>
-			</div> <%--playlist_section --%>
 		</div> <%--playlist_scroll --%>
 		<button class="btn_playlist_close">재생목록 닫기</button>
 	</div> <%--playlist_ct --%>
@@ -127,15 +26,7 @@
 			<div class="playbar_ct">
 				<div class="track_area">
 					<div class="thumb" style="background-image:url('${path}/z00_imgs/music-player.svg')"></div>
-					<div class="track_info">
-					<%-- 재생목록 없을 때 
-						<p class="no_list">
-							<span>재생목록이</span>비어있습니다
-						</p>--%>
-					<%-- 재생목록 있을 때--%>
-						<p class="title">Fly away(inst)</p>
-						<p class="artist">권진아</p> 
-					</div>
+					<div class="track_info"></div>
 				</div>
 				<div class="player_controller">
 					<div class="playtime">
@@ -169,14 +60,43 @@
 			</div>
 		</section>
 	</div>
-	<script>
-		var isLogin = true;
-		var path="${path}";
-		var audioList = [{m_no:"1", m_name:"Fly away(inst)", art_name:"권진아"}, 
-			{m_no:"2", m_name:"내 손을 잡아(inst)", art_name:"아이유(IU)"},
-			{m_no:"3", m_name:"그땐 그땐 그땐(inst)", art_name:"슈프림팀"}];
-		var pl = {"0":audioList};
-	 	localStorage.setItem('PLO_PL', JSON.stringify(pl));
-	</script>
+<script>
+	var isLogin = "${u.u_no}"=="" ? false : true;
+	var u_no = isLogin ? "${u.u_no}" : "0";
+	var path="${path}";
+	console.log(isLogin + " : " + u_no);
+
+ 	// PlayList, Player에 사용할 변수
+	var cookieAudioList = JSON.parse(localStorage.getItem('PLO_PL'));
+	var lasttrackList = JSON.parse(localStorage.getItem('PLO_LAST_TRACK'));
+	var lasttrack = lasttrackList==null ? 0 : lasttrackList[u_no];
+	var audioList=null;
+	var currentSong=null;
+	var maxSong=null;
+	var song = new Audio();
+	var localPL = { };
+	var localLS = { };
+	// audioList 만들기
+	function findCurrentSong(ele) {
+		if(ele.m_no==lasttrack.m_no) return true;
+	}
+ 	function setAudioList(arr) {
+ 		if(arr==null) return;
+ 		audioList = arr[u_no];
+ 		console.log(audioList==null);
+ 		if(audioList==null) return;
+		// PL쿠키 있을 때
+		currentSong = lasttrack==0 ? 0:audioList.findIndex(findCurrentSong);
+		maxSong = audioList.length-1;
+		song.src = path+'/z03_music/'+audioList[currentSong].m_no+".mp3";
+ 	}
+ 	setAudioList(cookieAudioList);
+ 	
+ //	console.log(location.pathname);
+ 	var loc = location.pathname;
+ 	if(loc == '/plo/login.do') {
+ 		$('.playlist_ct .playlist_scroll').css('top', '220px');
+ 	}
+</script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="${path}/z02_js/musicplayer.js"></script>

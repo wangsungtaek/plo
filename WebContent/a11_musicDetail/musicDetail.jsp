@@ -9,12 +9,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>PLO</title>
 <link rel="stylesheet" href="${path}/z01_css/default.css">
 <link rel="stylesheet" href="${path}/z01_css/musicDetail.css">
 <script type="text/javascript" src="${path}/z02_js/jquery-3.5.1.js"></script>
 </head>
 <body>
+	<%-- controller :: /musicdetail --%>
 	<div id="app">
 	<%@ include file="../a01_main/header.jsp" %>
 		<div id="wrap">
@@ -23,15 +24,15 @@
 					<div class="bagde_area">
 						<div class="album_thumbnail">
 							<div class="link_thumbnail">
-								<img src="../z00_imgs/rollin_thumb.jpg" width="240" height="240" alt="롤린">
+								<img src="${path}${music.m_path}" width="240" height="240" alt="${music.m_name}">
 							</div>
-							<button class="btn_thumbnail_play">노래제목 듣기</button>
+							<button class="btn_thumbnail_play">${music.m_name} 듣기</button>
 						</div>
 						<div class="badge_track_info">
 							<div class="info_area">
-								<p class="title"><a href="#">노래제목</a></p>
-								<p class="artist"><a href="#">가수</a></p>
-								<p class="album"><a href="#">앨범명</a></p>
+								<p class="title"><a href="#">${music.m_name}</a></p><%--앨범정보이동 --%>
+								<p class="artist"><a href="#">${music.art_name}</a></p><%--가수정보이동 --%>
+								<p class="album"><a href="#">${music.alb_name}</a></p><%--앨범정보이동 --%>
 							</div>
 							<div class="util_area">
 								<button type="button" class="btn_add_list">재생 목록 담기</button>
@@ -45,20 +46,23 @@
 							<div class="info_txt">
 								<dl>
 									<dt>곡명</dt>
-									<dd>롤린 (Rollin')</dd>
-									<dt>작곡</dt>
-									<dd>용감한 형제</dd>
+									<dd>${music.m_name}</dd>
+								<%--<dt>작곡</dt>
+									<dd>용감한 형제</dd>--%>
 								</dl>
 							</div>
-							<div class="lyrics">그 날을 잊지 못해 babe<br>날 보며 환히 웃던<br>너의 미소에<br></div>
+							<div class="lyrics">${music.m_lyrics}</div>
 						</div>
 					</div>
 				</div>
+				<%@ include file="../a01_main/footer.jsp" %>
 			</section>
-			<%@ include file="../a01_main/footer.jsp" %>
 		</div>
+		<%@ include file="../a09_playList/musicplayer.jsp" %>
 	</div>
+<script>
+var m_no = "${music.m_no}";
+</script>
 <script type="text/javascript" src="${path}/z02_js/musicdetail.js"></script>
-<%@ include file="../a09_playList/musicplayer_test.jsp" %>
 </body>
 </html>

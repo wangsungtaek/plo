@@ -9,18 +9,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Plo</title>
+<title>PLO</title>
 <link rel="stylesheet" href="${path}/z01_css/default.css">
 <link rel="stylesheet" href="${path}/z01_css/mypage.css">
 <script type="text/javascript" src="${path}/z02_js/jquery-3.5.1.js"></script>
 </head>
+<script>
+	var proc="${param.proc}";
+	if(proc=="del"){
+ 		alert("탈퇴되었습니다.");
+ 		location.href='${path}/a01_main/main.jsp';
+ 	}
+	if(proc=="update") {
+		alert("비밀번호 변경되었습니다.");
+	}
+</script>
 <body>
 	<div id="app">
-		<%@ include file="../a01_main/header.jsp" %>
+	<%@ include file="../a01_main/header.jsp" %>
 		<div id="wrap">
 			<section id="main" class="section_info">
 				<div class="section_inner">
-					<div class="popup_container">
+					<div class="popup_container" style="display:none;">
 						<div class="popup_leave">
 							<h3>회원탈퇴</h3>
 							<div class="popup_content">
@@ -40,6 +50,9 @@
 									</p>
 								</div>
 								<div class="pop_button">
+									<form id="userDel" method="post" action="${path}/mypage">
+										<input type="hidden" name="proc" value="del">
+									</form>
 									<button type="button" disabled="disabled" class="btn_leave">회원 탈퇴 완료</button>
 								</div>
 								<button type="button" class="btn_close_popup"></button>
@@ -49,7 +62,7 @@
 					<h2>정보관리</h2>
 					<div class="info_box">
 						<p class="info_email">
-							<span>aaa@naver.com</span>
+							<span>${u.u_mail}</span> <%--${u.u_mail} --%>
 						</p>
 					</div>
 					<div class="newlist_tab">
@@ -94,9 +107,13 @@
 							<li>
 								<span>
 									<div class="comp_inc_btn" style="width: 440px;">
+										<form id="updatePass" method="post" action="${path}/mypage">
+										<input type="hidden" name="m_no" value="${m_no}"/>
 										<label for="newPasswordRe">
-											<input id="newPasswordRe" disabled="disabled" title="비밀번호를 입력하세요" placeholder="새로운 비밀번호 확인" type="password" class="comp_inp_pw">
+											<input type="hidden" name="proc" value="update">
+											<input id="newPasswordRe" name="new_pass" disabled="disabled" title="비밀번호를 입력하세요" placeholder="새로운 비밀번호 확인" type="password" class="comp_inp_pw">
 										</label>
+										</form>
 										<div class="btn_area">
 											<button type="button" class="btn_pw_del">입력된 비밀번호 삭제</button>
 											<button type="button" class="btn_pw_show">비밀번호 보기</button>
@@ -114,9 +131,11 @@
 				<%@ include file="../a01_main/footer.jsp" %>
 			</section>	
 		</div>
+		<%@ include file="../a09_playList/musicplayer.jsp" %>
 	</div>
-
+<script>
+var pass = "${u.u_pass}";
+</script>
 <script type="text/javascript" src="${path}/z02_js/mypage.js"></script>
-	<%@ include file="../a09_playList/musicplayer_test.jsp" %>
 </body>
 </html>

@@ -42,7 +42,7 @@ CREATE SEQUENCE P_ARTIST_NO_SEQ
 	INCREMENT BY 1;
 
 -- 삭제
-DROP TABLE P_ARTIST;
+DROP TABLE P_ARTIST CASCADE constraints;
 DROP SEQUENCE P_ARTIST_NO_SEQ;
 
 -- 데이터
@@ -72,7 +72,7 @@ CREATE SEQUENCE P_ALBUM_NO_SEQ
 	INCREMENT BY 1;
 
 -- 삭제
-DROP TABLE P_ALBUM;
+DROP TABLE P_ALBUM CASCADE constraints;
 DROP SEQUENCE P_ALBUM_NO_SEQ;
 
 -- 데이터
@@ -137,6 +137,13 @@ DROP TABLE P_MUSIC CASCADE CONSTRAINTS;
 DROP SEQUENCE P_MUSIC_NO_SEQ;
 
 -- 데이터
+INSERT INTO P_MUSIC
+	VALUES(1, 'Celebrity', 110, '/img/music/celebrity.png',
+		   '세상의 모서리 구부정하게 커버린 골칫거리..', 1);
+INSERT INTO P_MUSIC
+	VALUES(2, 'asdf', 2, '/img/music/celebrity.png',
+		   'asdfasdffds..', 1);
+		  
 INSERT INTO P_MUSIC
 	VALUES(P_MUSIC_NO_SEQ.NEXTVAL, 'Celebrity', 110, '/img/music/celebrity.png',
 		   '세상의 모서리 구부정하게 커버린 골칫거리..', 1);

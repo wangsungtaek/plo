@@ -12,15 +12,17 @@
 <meta charset="UTF-8">
 <title>PLO</title>
 <style>
+a{ 	text-decoration:none;  color:black; color: inherit}
+ul{list-style: none;}
 .signin_content{
-	margin:0 auto;	width:1024px;	height:1000px;		padding-top : 10px;}
+	margin:0 auto;	height:1000px;	}
 #box{
-	margin : 0 auto;	margin-top : 200px; left : 202px; 
+	margin : 0 auto;	margin-top : 150px; left : 202px; 
 	width : 620px;	height : 440px;	border : 1px solid lightgray;}
 #title{
 	width : 200px; margin-left : 210px;	text-align : center; margin-top : 85px;	font-size : 30px;	font-weight : bold;}
 #pwfindTable{
-	width : 400px;	height : 220px;	margin-top: 60px; margin-left : 110px; font-size:14px;}		
+	width : 400px;	height : 220px;	margin-top: 40px; margin-left : 110px; font-size:14px;}		
 #pwfindTable td{
 	padding : 5px; }
 .input{
@@ -77,8 +79,9 @@
 </script>
 </head>
 <body>
+	<%@ include file="../a01_main/header.jsp" %>
 	<div class="signin_content">
-		<%@ include file="../a01_main/header.jsp" %>		
+				
 		<div id="box">
 			<div id="title">비밀번호 찾기</div>
 				<form method="post"> 
@@ -89,7 +92,8 @@
 				</table>
 			</form>
 		</div>
-		<%@ include file="../a01_main/footer.jsp" %>
+	<%@ include file="../a01_main/footer.jsp" %>
 	</div>
+	<%@ include file="../a09_playList/musicplayer.jsp" %>
 </body>
 </html>

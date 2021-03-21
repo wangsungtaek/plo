@@ -73,7 +73,7 @@ public class NoticeService {
 				Date n_date = rs.getDate("n_date");
 				int n_pub = rs.getInt("n_pub");
 				
-				noticeList.add(new Notice(n_no, n_title, n_content, n_date, n_pub));
+				noticeList.add(new Notice(n_no, n_title, n_content.replaceAll("\n", "<br>"), n_date, n_pub));
 			}
 			
 			rs.close();

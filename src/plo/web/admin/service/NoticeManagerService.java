@@ -151,7 +151,7 @@ public class NoticeManagerService {
 		
 		String sql = "INSERT INTO P_NOTICE\n"
 					+ "VALUES(P_NOTICE_NO_SEQ.NEXTVAL, ?, ?,\n"
-					+ "to_date(?, 'yyyy-mm-dd'), ?)";
+					+ "sysdate, ?)";
 		System.out.println(sql);
 		try {
 			setCon();
@@ -159,8 +159,7 @@ public class NoticeManagerService {
 			
 			prst.setString(1, notice.getN_title());
 			prst.setString(2, notice.getN_content());
-			prst.setString(3, notice.getN_date_s());
-			prst.setInt(4, notice.getN_pub());
+			prst.setInt(3, notice.getN_pub());
 			
 			rs = prst.executeQuery();
 			
@@ -224,7 +223,7 @@ public class NoticeManagerService {
 			prst.setString(2, notice.getN_content());
 			prst.setString(3, notice.getN_date_s());
 			prst.setInt(4, notice.getN_pub());
-			prst.setInt(4, notice.getN_no());
+			prst.setInt(5, notice.getN_no());
 			
 			rs = prst.executeQuery();
 			

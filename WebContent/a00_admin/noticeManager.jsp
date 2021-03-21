@@ -44,9 +44,8 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-			id="accordionSidebar">
+		<ul class="navbar-nav sidebar sidebar-dark accordion"
+			id="accordionSidebar" style="background: #ff8533;">
 
 			<!-- Sidebar - Brand -->
 			<a
@@ -188,7 +187,7 @@
 					<!-- DataTale -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">공지사항 조회</h6>
+							<h6 class="m-0 font-weight-bold" style="color:#ff8533;">공지사항 조회</h6>
 						</div>
 
 						<!-- DataTable : Data -->
@@ -243,22 +242,23 @@
 									<div class="btn-group" role="group"
 										aria-label="Basic radio toggle button group">
 										
-										<button type="button" class="btn btn-outline-primary" ${(startNum <= 1)?'disabled':''}
+										<button type="button" class="btn" style="color:#ff8533; border:1px solid #ff8533;" ${(startNum <= 1)?'disabled':''}
 										onclick="paging(${startNum-1})">
 											Previous
 										</button>
 										
 										<c:forEach begin="${startNum}" end="${startNum+4}" varStatus="status">
 											<c:if test="${lastNum >= status.current}">
-											<button type="button"
-												class="btn btn-${((page)==(status.current))?'':'outline-'}primary"
+											<button type="button" class="btn" 
+												style="color:${((page)==(status.current))?'white':'#ff8533'};
+													 border:1px solid #ff8533; background: ${((page)==(status.current))?'#ff8533':'white'};"
 												onclick="paging(${status.current})">
 												${status.index}
 											</button>
 											</c:if>
 										</c:forEach>
 										
-										<button type="button" class="btn btn-outline-primary" ${(lastNum <= startNum+4)?'disabled':''}
+										<button type="button" class="btn" style="color:#ff8533; border:1px solid #ff8533;" ${(lastNum <= startNum+4)?'disabled':''}
 										onclick="paging(${startNum+5})">
 											Next
 										</button>
@@ -311,19 +311,35 @@
 				<form method="post" id="modal-form">
 				<input type="hidden" value="" name="isUpdate"/>
 				<div class="modal-body wd-70">
-					<table class="table table-bordered mb-0" width="100%" cellspacing="0">
-						<tr><th>번호</th><td><input name="n_no" type="text" readonly="readonly"/></td></tr>
-						<tr><th>제목</th><td><input name="n_title" type="text"/></td></tr>
-						<tr><th>내용</th><td><input name="n_content" type="text"/></td></tr>
-						<tr><th>작성일</th><td><input name="n_date" type="date"/></td></tr>
-						<tr><th>공개여부</th><td><input name="n_pub" type="text"/></td></tr>
-					</table>
+					<div class="input-group mb-3">
+						<span class="input-group-text w-30 d-block" id="inputGroup-sizing-default">제목</span>
+						<input type="text" class="inId form-control" aria-label="Sizing example input" 
+						aria-describedby="inputGroup-sizing-default" placeholder="제목을 입력하세요." name="n_no">
+					</div>
+					<div class="input-group mb-3">
+						<span class="input-group-text w-30 d-block" id="inputGroup-sizing-default">제목</span>
+						<input type="text" class="inId form-control" aria-label="Sizing example input" 
+						aria-describedby="inputGroup-sizing-default" placeholder="제목을 입력하세요." name="n_title">
+					</div>
+					<div class="input-group mb-3">
+						<span class="input-group-text w-30 d-block" id="inputGroup-sizing-default">날짜</span>
+						<input type="date" class="inId form-control" aria-label="Sizing example input" 
+						aria-describedby="inputGroup-sizing-default" placeholder="날짜 입력하세요." name="n_date">
+					</div>
+					
+					<div class="input-group mb-3">
+						<textarea class="w-100" rows="10" style="text-align: left;" name="n_content"></textarea>
+					</div>
+					<div>
+						<input id="pub" type="checkbox" name="n_pub"/>
+						<label for="pub">공개여부</label>
+					</div>
 				</div>
 				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-bs-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-primary"
+					<button type="button" class="btn" style="background: #ff8533; color: white;"
 						data-bs-dismiss="modal" id="update">수정</button>
 				</div>
 			</div>
@@ -338,12 +354,10 @@
 
 	<!-- Bootstrap core JavaScript-->
 	<script src="${path}/a00_admin/vendor/jquery/jquery.min.js"></script>
-	<script
-		src="${path}/a00_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${path}/a00_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script
-		src="${path}/a00_admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="${path}/a00_admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<!-- Custom scripts for all pages-->
 	<script src="${path}/z02_js/admin/sb-admin-2.min.js"></script>
@@ -363,7 +377,11 @@
 					$('[name=n_title]').val(notice.n_title);
 					$('[name=n_content]').val(notice.n_content);
 					$('[name=n_date]').val(notice.n_date);
-					$('[name=n_pub]').val(notice.n_pub);
+					console.log(notice.n_pub);
+					if(notice.n_pub == 0)
+						$('[name=n_pub]').prop("checked", false);
+					else
+						$('[name=n_pub]').val("1").prop("checked", true);
 				}
 			};
 			xhr.send();
